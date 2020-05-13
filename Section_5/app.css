@@ -1,0 +1,27 @@
+/*hex*/
+h1 {
+	color: #FF0000;
+	/*border-color: purple;
+	border-width: 5px;
+	border-style: solid;*/
+	border: 2px solid purple;
+}
+/*rgb*/
+li {
+	color: rgb(100, 255, 150);
+}
+/*rgba*/
+h4 {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+body {
+	background: black;
+	/*background: url(https://hdqwalls.com/wallpapers/lake-aurora-po.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;*/
+}
+
+div {
+	background: #a72dbc;
+}

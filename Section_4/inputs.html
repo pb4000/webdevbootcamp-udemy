@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inputs Demo</title>
+</head>
+<body>
+	<p>Do you prefer cats or dogs?</p>
+	<form>
+		<!-- radio must have 1 and only 1 option selected. cannot deselect -->
+		<!-- radios must be inside same <form> AND both have the same name -->
+		<!-- NOTE > label must be immediately before item to be labelled -->
+		<!-- value attribute carries chosen valuer for each choice -->
+		<label for="dogs">Dogs</label>
+		<input type="radio" name="petChoice" id="dogs" value="dogs">
+		<label for="cats">Cats</label>
+		<input type="radio" name="petChoice" id="cats" value="cats">
+
+		<p>What's your current mood?</p>
+		<!-- <select> tag creates dropdown menu -->
+		<!-- must have name attribute to have data sent to server -->
+		<select name="mood">
+			<!-- <option> tag gives options for dropdown menu/<select> tag -->
+			<option value="happy">:)</option>
+			<option value="neutral">:|</option>
+			<option value="sad">:(</option>
+		</select>
+		<p>
+			<textarea name="paragraph" rows="5" cols="20"></textarea>
+		</p>
+
+		<button>Go!</button>
+	</form>
+	<!-- checkbox can be selected and unselected at will -->
+	<input type="checkbox" name="checkbox">
+</body>
+</html>

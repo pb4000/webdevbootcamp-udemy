@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Demo</title>
+</head>
+<body>
+
+	<h1>Login</h1>
+	<h2>Pay attention to the url above after submitting info</h2>
+
+	<!-- action = where form sends data to -->
+	<!-- method = what http method (get/post) -->
+	<form>
+		<!-- Method 1: <label> has input tag nested inside of it -->
+			<!-- email type requires the format of an email (contains 'janedoe@xyz.com') -->
+		<label>Email: <input type="email" name="email" placeholder="username" required></label>
+		<!-- Method 2: <label> has 'for' attribute to specify it is for tag with the matching id attribute -->
+		<label for="password">Password: </label>
+		<!-- type specifies type of input -->
+		<!-- id specifies id of the tag -->
+		<!-- name specifies name of entered contebt -->
+		<!-- placeholder shows greyed-out text in text/password field -->
+		<!-- required makes sure user fills this out before submitting content -->
+		<input type="password" id="password" name="password" placeholder="password" required>
+		<input type="submit">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+/*element*/
+li {
+
+}
+/*class*/
+.hello {
+
+}
+/*id*/
+#name {
+
+}
+/*star*/
+/*selects the whole page*/
+* {
+	border: 1px solid lightgrey;
+}
+
+/*descendant selectors*/
+/*selects all anchor tags (a) which are contained within an li*/
+li a {
+	color: red;
+}
+exterior interior {
+	code
+}
+
+/*adjacent selectors*/
+/*select element which occurs after a certain element*/
+h4 + ul {
+	border: 4px solid red;
+}
+leading + following {
+	code
+}
+
+/*attribute selectors*/
+/*select elements with certain attribute*/
+a[href="https://www.google.com"] {
+	background: blue;
+}
+element[attribute] {
+	code
+}
+/*nth of type*/
+/*selects every nth occurence of a specific element*/
+/*this selects every 3rd occurence*/
+ul:nth-of-type(3n) {
+	background: purple;
+}
+/*this selects only the 3rd occurence*/
+ul:nth-of-type(3) {
+	code
+}
+element:nth-of-type(<nth>) {
+	code
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms Quiz</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<form>
+		<p>
+			<label>First Name: <input type="text" name="firstname" required></label>
+			<label>Las Name: <input type="text" name="lastname" required></label>
+		</p>
+		<p>
+			<label>Male: <input type="radio" name="gender" value="male"></label>
+			<label>Female: <input type="radio" name="gender" value="female"></label>
+			<label>Other: <input type="radio" name="gender" value="other"></label>
+		</p>
+		<p>
+			<label>Email: <input type="email" name="email" required></label>
+			<label>Password: <input type="password" name="password" minlength="5" maxlength="10" required></label>
+		</p>
+		<p>
+			<label>Birthday: <input type="date" name="birthday"></label>
+		</p>
+		<p>
+			<label>I agree to the terms and conditions <input type="checkbox" name="tos"></label>
+		</p>
+		<p>
+			<input type="submit" name="submit">
+		</p>
+	</form>
+</body>
+</html>
