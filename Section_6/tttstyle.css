@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+
+table {
+    margin: auto;
+}
+
+#centersquare {
+    border: 2px solid black;
+}
+
+.vertmid {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.horizmid {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+}

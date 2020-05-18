@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Basics</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>This is a jumbotron</h1>
+                <p>wsnsiuo;bnsaio;</p>
+                <button class="btn btn-success btn-lg">Hi there</button>
+            </div>
+            <h1>Bootstrap Basics</h1>
+            <button class="btn btn-danger btn-xs">CLICK ME!</button>
+            <button class="btn btn-success btn-xs active">CLICK ME!</button>
+            <button class="btn btn-success btn-xs" disabled="disabled">CLICK ME!</button>
+    
+            <a href="http://www.getbootstrap.com" class="btn btn-info btn-lg">Bootstrap Docs</a>
+
+
+            <!-- .form-group = groups elements together in form
+            .form-control = allows bootstrap control over element(s) -->
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+
+
+              <!-- inline form -->
+              <form class="form-inline">
+                <div class="form-group">
+                  <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="exampleInputPassword3">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-default">Sign in</button>
+              </form>
+        </div>
+    </body>
+</html>

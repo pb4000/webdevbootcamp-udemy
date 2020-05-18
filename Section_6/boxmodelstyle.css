@@ -1,0 +1,29 @@
+p {
+    /* content - width and height */
+
+    /* can be in px, % of parent element size (think em) */
+    width: 50%;
+
+
+    /* border */
+
+    border: 2px solid blue;
+
+
+    /* padding */
+
+    /* padding: 10px; */
+    padding-left: 40px;
+
+    
+    /* margin */
+
+    /* margin: 100px; */
+    /* margin-top: 500px; */
+    /* margin: top right bottom left */
+    /* margin: 20px 40px 500px 100px; */
+    /* auto centers margins (dynamic) */
+    /* margin: 0 auto 0 auto; */
+    /* same as above */
+    margin: 0 auto;
+}
