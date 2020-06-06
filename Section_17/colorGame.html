@@ -9,28 +9,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>HELLO</title>
+    <link rel="stylesheet" href="colorGame.css">
+    <title>Color Game</title>
 </head>
 
 <body>
-    <h1 class="border border-danger d-inline">HELLO</h1>
-    <span class="border border-success d-block">HELLO</span>
-    <h1 class="d-xl-none">HIDE ME ON XL</h1>
-    <h1 class="d-none d-lg-block d-xl-none">ALWAYS HIDDEN EXCEPT LG</h1>
+    <div id="heading">
+        <h1>The Great</h1>
+        <h1 id="color"></h1>
+        <h1>Color Game</h1>
+    </div>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead d-none d-md-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, saepe. Quam nobis quia amet
-                dolor quo a corporis, quisquam, et esse, accusamus debitis explicabo atque ea dolorem soluta maiores
-                iure. Minus aliquid, odio obcaecati perspiciatis quam omnis assumenda qui, vel vero sapiente quae
-                dolorem! Sapiente, iste. Mollitia numquam quia unde, dolorum libero atque error enim aut placeat a
-                perspiciatis accusamus?</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </div>
+    <div id="stripe">
+        <button id="reset">NEW COLORS</button>
+        <span id="message"></span>
+        <button id="easy" class="">EASY</button>
+        <button id="hard" class="selected">HARD</button>
+    </div>
+
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -44,6 +47,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="colorGame.js"></script>
 </body>
 
 </html>
