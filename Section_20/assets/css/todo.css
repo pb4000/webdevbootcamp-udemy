@@ -1,0 +1,40 @@
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    align-items: center;
+}
+
+#todolist {
+    width: 360px;
+    font-size: large;
+}
+
+.fa-plus {
+    float: right;
+}
+
+body {
+    font-family: Roboto;
+    background: -webkit-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%);
+    /* Chrome 10+, Saf5.1+ */
+    background: -moz-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%);
+    /* FF3.6+ */
+    background: -ms-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%);
+    /* IE10 */
+    background: -o-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%);
+    /* Opera 11.10+ */
+    background: linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%);
+    /* W3C */
+}
+
+input {
+    width: inherit;
+    background-color: rgb(255, 255, 255);
+    border: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
