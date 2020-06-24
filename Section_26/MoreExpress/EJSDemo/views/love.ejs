@@ -1,0 +1,14 @@
+<!-- template to include from external file -->
+<%- include("partials/header") %>
+
+<!-- <%= %> renders js output to the html -->
+<h1>You fell in love with: <%= name %></h1>
+
+<!-- <% %> does not render to the html -->
+<% if (name.toLowerCase() === "rusty") { %>
+        <p>GOOD CHOICE!</p>
+<% } %>
+
+<p>P.S. this is the love.ejs file</p>
+
+<%- include("partials/footer") %>
