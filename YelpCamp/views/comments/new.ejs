@@ -1,0 +1,16 @@
+<%- include("../partials/header") %>
+<div class="container my-5 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="display-4 mt-5 text-center">Add New Comment to <%= campground.name %></h1>
+
+    <form action="/campgrounds/<%= campground._id %>/comments" method="post" class="d-flex flex-column align-items-center my-3"
+        style="width: 40%;">
+        <input type="text" name="comment[author]" placeholder="Author" class="my-2" style="width: 80%;">
+        <textarea type="text" name="comment[text]" placeholder="Text" class="my-2" style="width: 80%;"></textarea>
+        <div class="my-2 d-flex justify-content-center">
+            <a href="/campgrounds/<%= campground._id %>" class="btn btn-danger btn-md mx-2">Go Back</a>
+            <button class="btn btn-success btn-md mx-2">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include("../partials/footer") %>

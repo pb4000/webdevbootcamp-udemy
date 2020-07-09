@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// MONGODB
+// MONGOOSE SETUP
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/yelpcamp", {
     useNewUrlParser: true,
@@ -17,17 +17,23 @@ mongoose.connect("mongodb://localhost:27017/yelpcamp", {
     useUnifiedTopology: true
 });
 
-// schema setup
-const campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-const Campground = mongoose.model("Campground", campgroundSchema);
+// SCHEMA SETUP
+const Campground = require("./models/campground");
+const Comment = require("./models/comment");
+const seedDB = require("./seeds");
+seedDB();
+
+
+/*
+ * <<<<<<<<<<<<ROUTES>>>>>>>>>>>>
+ */
+
+ // root
 app.get("/", (req, res) => {
-    res.render("landing.ejs");
+    res.render("campgrounds/landing.ejs");
 });
 
+// ======CAMPGROUNDS======
 
 // INDEX - list of all campgrounds
 app.get("/campgrounds", async (req, res) => {
@@ -40,12 +46,12 @@ app.get("/campgrounds", async (req, res) => {
             campsites = results;
         }
     });
-    res.render("index.ejs", { campsites });
+    res.render("campgrounds/index.ejs", { campsites });
 });
 
 // NEW - form to submit a new campground
 app.get("/campgrounds/new", (req, res) => {
-    res.render("new.ejs");
+    res.render("campgrounds/new.ejs");
 })
 
 // CREATE - submits a new campground
@@ -68,17 +74,50 @@ app.post("/campgrounds", async (req, res) => {
 // SHOW - show details of specific campground
 // :id looks for anything. "campgrounds/new" would redirect here if this route was first
 app.get("/campgrounds/:id", (req, res) => {
-    // find campground with provided id
-    Campground.findById(req.params.id, (err, results) => {
+    // find campground with provided id and populate comments array
+    Campground.findById(req.params.id).populate("comments").exec((err, results) => {
         if (err) {
             console.log(err);
         } else {
             console.log(results);
             // render the show page
-            res.render("show.ejs", {campground: results});
+            res.render("campgrounds/show.ejs", { campground: results });
         }
     });
 });
+
+
+// ======COMMENTS======
+
+app.get("/campgrounds/:id/comments/new", (req, res) => {
+    Campground.findById(req.params.id, (err, results) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("comments/new.ejs", { campground: results });
+        }
+    });
+});
+
+app.post("/campgrounds/:id/comments", (req, res) => {
+    Campground.findById(req.params.id, (err, campground) => {
+        if (err) {
+            console.log(err);
+            res.redirect("/campgrounds");
+        } else {
+            Comment.create(req.body.comment, (err, comment) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    campground.comments.push(comment);
+                    campground.save();
+                    res.redirect("/campgrounds/" + campground._id);
+                }
+            });
+        }
+    });
+});
+
 
 app.listen(3000, () => {
     console.log("Listening on port 3000...");

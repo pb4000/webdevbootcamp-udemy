@@ -13,15 +13,9 @@
         <div class="description">
             <p><%- post.body %></p>
         </div>
-        <div class="ui left floated grid managing-buttons">
-            <div class="three wide column">
-                <a href="/blogs/<%= post._id %>/edit" class="ui big basic button green">Edit</a>
-            </div>
-            <div class="three wide column">
-                <form action="/blogs/<%= post._id %>?_method=DELETE" method="post">
-                    <input type="submit" value="Delete" class="ui big basic button red">
-                </form>
-            </div>
+        <div class="footer-buttons">
+            <a href="/blogs/<%= post._id %>/edit" class="ui big basic button green">Edit</a>
+            <input type="submit" value="Delete" class="ui big basic button red">
         </div>
     </div>
 </div>
