@@ -1,0 +1,12 @@
+.campsite-img {
+    width: 100%;
+    margin: 0;
+}
+
+.campsite-img-thumbnail {
+    padding: 0 !important;
+}
+
+.campsite-description {
+    margin: 0.5rem;
+}

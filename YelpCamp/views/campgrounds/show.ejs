@@ -1,21 +1,67 @@
 <%- include("../partials/header") %>
 
-<h1 class="mt-5"><%= campground.name %></h1>
+<div class="container" style="margin-top: 5rem;">
+    <div class="row">
+        <!-- sidebar -->
+        <div class="col-md-3">
+            <p class="lead">Yelp Camp</p>
+            <div class="list-group">
+                <li class="list-group-item active">
+                    Info 1
+                </li>
+                <li class="list-group-item">
+                    Info 2
+                </li>
+                <li class="list-group-item">
+                    Info 3
+                </li>
+            </div>
+        </div>
+        <!-- campground view/info -->
+        <div class="col-md-9">
+            <div class="img-thumbnail campsite-img-thumbnail">
+                <img class="img-fluid campsite-img" src="<%= campground.image %>"
+                    alt="Image of the <%=campground.name %> campground">
+                <!-- campground description -->
+                <div class="caption-full campsite-description">
+                    <h4 class="float-right">$9.00/night</h4>
+                    <h4 class="mt-5">
+                        <!-- link to park service/campground website -->
+                        <a href="">
+                            <%= campground.name %>
+                        </a>
+                    </h4>
+                    <p><%= campground.description %></p>
+                </div>
+            </div>
+            <div class="card card-body bg-light my-3">
+                <div class="row">
+                    <div class="col-6">
+                    <h3>Reviews</h3>
+                    </div>
 
-<img src="<%= campground.image %>" alt="Image of the <%=campground.name %> campground" style="width: 50rem;">
+                    <div class="col-6 text-right">
+                        <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Leave a
+                            Review</a>
+                    </div>
+                </div>
 
-<p><%= campground.description %></p>
+                <hr>
 
-<p>
-    <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-</p>
-
-<h3>Comments</h3>
-
-<% campground.comments.forEach((comment) => { %>
-<p>
-    <strong><%= comment.author %></strong> - <%= comment.text %>
-</p>
-<% }); %>
+                <% campground.comments.forEach((comment) => { %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong><%= comment.author %></strong>
+                        <span class="float-right">10 days ago</span>
+                        <p>
+                            <%= comment.text %>
+                        </p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%- include("../partials/footer") %>
