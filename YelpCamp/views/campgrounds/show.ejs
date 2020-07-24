@@ -37,6 +37,14 @@
                             Submitted by <%= campground.author.username %>
                         </em>
                     </p>
+                    <% if (currentUser && campground.author.id.equals(currentUser._id)) { %>
+                    <div class="d-flex">
+                        <a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-warning mr-2">Edit</a>
+                        <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+                            <button type="submit" class="btn btn-danger mx-2">Delete</button>
+                        </form>
+                    </div>
+                    <% } %>
                 </div>
             </div>
             <div class="card card-body bg-light my-3">
@@ -54,13 +62,23 @@
                 <hr>
 
                 <% campground.comments.forEach((comment) => { %>
-                <div class="row">
+                <div class="row my-2">
                     <div class="col-md-12">
                         <strong><%= comment.author.username %></strong>
                         <span class="float-right">10 days ago</span>
-                        <p>
+                        <p class="mb-1">
                             <%= comment.text %>
                         </p>
+                        <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+                        <div class="d-flex">
+                            <a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit"
+                                class="btn btn-sm btn-outline-primary mr-1">Edit</a>
+                            <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"
+                                method="post">
+                                <button class="btn btn-sm btn-outline-danger mx-1" type="submit">Delete</button>
+                            </form>
+                        </div>
+                        <% } %>
                     </div>
                 </div>
                 <% }); %>

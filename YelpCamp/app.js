@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost:27017/yelpcamp", {
 const Campground = require("./models/campground");
 const Comment = require("./models/comment");
 const seedDB = require("./seeds");
-seedDB();
+// seedDB();
 
 
 // ======PASSPORT SETUP======
@@ -42,7 +42,12 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-// ======CURRENT USER MIDDLEWARE======
+// ======MISC SETUP======
+const methodOverride = require('method-override');
+app.use(methodOverride("_method"));
+
+
+// ======MIDDLEWARE======
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
